@@ -60,6 +60,7 @@ def main():
         return
 
     metrics = data[0].keys()
+    metrics = [key for key in metrics if key != "time_offset"]
     stats = {}
 
     for metric in metrics:
@@ -124,6 +125,68 @@ def main():
     ax2.legend()
     ax2.grid()
     st.pyplot(fig2)
+
+    def calculate_timeline_with_offset(data):
+        timeline = []
+        start_offset = min([entry['time_offset'] for entry in data])
+        for entry in data:
+            stages = {
+                "DNS Lookup": entry["time_namelookup"],
+                "Connection": entry["time_connect"] - entry["time_namelookup"],
+                "SSL Handshake": entry["time_appconnect"] - entry["time_connect"],
+                "Request Preparation": entry["time_pretransfer"] - entry["time_appconnect"],
+                "Time to First Byte": entry["time_starttransfer"] - entry["time_pretransfer"],
+                "Total": entry["time_total"] - entry["time_starttransfer"],
+            }
+
+            start_time = entry["time_offset"] - start_offset
+            adjusted_timeline = []
+            for stage, duration in stages.items():
+                adjusted_timeline.append((stage, start_time, duration))
+                start_time += duration
+            timeline.append(adjusted_timeline)
+        return timeline
+
+    def plot_timeline_with_offset(timeline):
+        num_requests = len(timeline)
+        stages = [stage[0] for stage in timeline[0]]
+        colors = [
+            "#FF9999",
+            "#66B2FF",
+            "#99FF99",
+            "#FFD700",
+            "#FFB266",
+            "#66FFFF"]
+
+        fig, ax = plt.subplots(figsize=(12, 6))
+        bar_height = 0.4
+
+        for i, request in enumerate(timeline):
+            for j, (stage, start_time, duration) in enumerate(request):
+                ax.barh(
+                    i,
+                    duration,
+                    left=start_time,
+                    height=bar_height,
+                    color=colors[j],
+                    label=stage if i == 0 else "")
+
+        ax.set_xlabel("Time (s)")
+        ax.set_ylabel("Request Index")
+        ax.set_title("Curl Metrics Timeline with Time Offset")
+        y_step = 10
+        ax.set_yticks(range(0, num_requests, y_step))
+        ax.set_yticklabels(
+            [f"[{i}]" for i in range(0, num_requests, y_step)])
+        ax.legend(loc="lower right")
+        ax.grid(axis="x", linestyle="--", alpha=0.7)
+
+        return fig
+
+    if "time_offset" in data[0].keys():
+        timeline = calculate_timeline_with_offset(data)
+        fig = plot_timeline_with_offset(timeline)
+        st.pyplot(fig)
 
 
 if __name__ == "__main__":
