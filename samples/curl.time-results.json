@@ -1,0 +1,902 @@
+[
+  {
+    "time_appconnect": 0.076599,
+    "time_connect": 0.030196,
+    "time_namelookup": 0.017049,
+    "time_pretransfer": 0.076698,
+    "time_redirect": 0,
+    "time_starttransfer": 0.18403,
+    "time_total": 0.186533
+  },
+  {
+    "time_appconnect": 0.069648,
+    "time_connect": 0.018954,
+    "time_namelookup": 0.004585,
+    "time_pretransfer": 0.069733,
+    "time_redirect": 0,
+    "time_starttransfer": 0.162383,
+    "time_total": 0.163507
+  },
+  {
+    "time_appconnect": 0.06964,
+    "time_connect": 0.017183,
+    "time_namelookup": 0.004826,
+    "time_pretransfer": 0.069771,
+    "time_redirect": 0,
+    "time_starttransfer": 0.153999,
+    "time_total": 0.161687
+  },
+  {
+    "time_appconnect": 0.070986,
+    "time_connect": 0.017797,
+    "time_namelookup": 0.003753,
+    "time_pretransfer": 0.071802,
+    "time_redirect": 0,
+    "time_starttransfer": 0.163044,
+    "time_total": 0.166875
+  },
+  {
+    "time_appconnect": 0.064099,
+    "time_connect": 0.015018,
+    "time_namelookup": 0.003755,
+    "time_pretransfer": 0.064241,
+    "time_redirect": 0,
+    "time_starttransfer": 0.161639,
+    "time_total": 0.162697
+  },
+  {
+    "time_appconnect": 0.06194,
+    "time_connect": 0.018139,
+    "time_namelookup": 0.005203,
+    "time_pretransfer": 0.062011,
+    "time_redirect": 0,
+    "time_starttransfer": 0.155919,
+    "time_total": 0.159756
+  },
+  {
+    "time_appconnect": 0.068046,
+    "time_connect": 0.020546,
+    "time_namelookup": 0.004014,
+    "time_pretransfer": 0.068146,
+    "time_redirect": 0,
+    "time_starttransfer": 0.158099,
+    "time_total": 0.162614
+  },
+  {
+    "time_appconnect": 0.069514,
+    "time_connect": 0.018014,
+    "time_namelookup": 0.005116,
+    "time_pretransfer": 0.069682,
+    "time_redirect": 0,
+    "time_starttransfer": 0.158012,
+    "time_total": 0.160494
+  },
+  {
+    "time_appconnect": 0.065479,
+    "time_connect": 0.017387,
+    "time_namelookup": 0.00428,
+    "time_pretransfer": 0.065594,
+    "time_redirect": 0,
+    "time_starttransfer": 0.15918,
+    "time_total": 0.163757
+  },
+  {
+    "time_appconnect": 0.083509,
+    "time_connect": 0.035604,
+    "time_namelookup": 0.024868,
+    "time_pretransfer": 0.083752,
+    "time_redirect": 0,
+    "time_starttransfer": 0.18904,
+    "time_total": 0.195648
+  },
+  {
+    "time_appconnect": 0.073866,
+    "time_connect": 0.023434,
+    "time_namelookup": 0.00556,
+    "time_pretransfer": 0.073938,
+    "time_redirect": 0,
+    "time_starttransfer": 0.167643,
+    "time_total": 0.173436
+  },
+  {
+    "time_appconnect": 0.069823,
+    "time_connect": 0.018806,
+    "time_namelookup": 0.004004,
+    "time_pretransfer": 0.069984,
+    "time_redirect": 0,
+    "time_starttransfer": 0.152319,
+    "time_total": 0.156337
+  },
+  {
+    "time_appconnect": 0.064903,
+    "time_connect": 0.017041,
+    "time_namelookup": 0.007182,
+    "time_pretransfer": 0.065105,
+    "time_redirect": 0,
+    "time_starttransfer": 0.154353,
+    "time_total": 0.155823
+  },
+  {
+    "time_appconnect": 0.077372,
+    "time_connect": 0.0235,
+    "time_namelookup": 0.009571,
+    "time_pretransfer": 0.077572,
+    "time_redirect": 0,
+    "time_starttransfer": 0.171143,
+    "time_total": 0.175266
+  },
+  {
+    "time_appconnect": 0.078532,
+    "time_connect": 0.023835,
+    "time_namelookup": 0.007994,
+    "time_pretransfer": 0.078822,
+    "time_redirect": 0,
+    "time_starttransfer": 0.165686,
+    "time_total": 0.170523
+  },
+  {
+    "time_appconnect": 0.06639,
+    "time_connect": 0.016487,
+    "time_namelookup": 0.005615,
+    "time_pretransfer": 0.066544,
+    "time_redirect": 0,
+    "time_starttransfer": 0.158837,
+    "time_total": 0.162197
+  },
+  {
+    "time_appconnect": 0.064419,
+    "time_connect": 0.016343,
+    "time_namelookup": 0.0043,
+    "time_pretransfer": 0.064495,
+    "time_redirect": 0,
+    "time_starttransfer": 0.158296,
+    "time_total": 0.160724
+  },
+  {
+    "time_appconnect": 0.068082,
+    "time_connect": 0.019161,
+    "time_namelookup": 0.008188,
+    "time_pretransfer": 0.06824,
+    "time_redirect": 0,
+    "time_starttransfer": 0.162163,
+    "time_total": 0.163015
+  },
+  {
+    "time_appconnect": 0.08681,
+    "time_connect": 0.02028,
+    "time_namelookup": 0.008841,
+    "time_pretransfer": 0.087086,
+    "time_redirect": 0,
+    "time_starttransfer": 0.179151,
+    "time_total": 0.183922
+  },
+  {
+    "time_appconnect": 0.102527,
+    "time_connect": 0.024654,
+    "time_namelookup": 0.007982,
+    "time_pretransfer": 0.10266,
+    "time_redirect": 0,
+    "time_starttransfer": 0.19081,
+    "time_total": 0.193356
+  },
+  {
+    "time_appconnect": 0.078214,
+    "time_connect": 0.024031,
+    "time_namelookup": 0.009949,
+    "time_pretransfer": 0.078639,
+    "time_redirect": 0,
+    "time_starttransfer": 0.166798,
+    "time_total": 0.175843
+  },
+  {
+    "time_appconnect": 0.073854,
+    "time_connect": 0.020634,
+    "time_namelookup": 0.008902,
+    "time_pretransfer": 0.073923,
+    "time_redirect": 0,
+    "time_starttransfer": 0.165492,
+    "time_total": 0.168071
+  },
+  {
+    "time_appconnect": 0.064182,
+    "time_connect": 0.017271,
+    "time_namelookup": 0.003584,
+    "time_pretransfer": 0.064357,
+    "time_redirect": 0,
+    "time_starttransfer": 0.159629,
+    "time_total": 0.16186
+  },
+  {
+    "time_appconnect": 0.076859,
+    "time_connect": 0.023569,
+    "time_namelookup": 0.007909,
+    "time_pretransfer": 0.077096,
+    "time_redirect": 0,
+    "time_starttransfer": 0.162506,
+    "time_total": 0.165718
+  },
+  {
+    "time_appconnect": 0.071069,
+    "time_connect": 0.020661,
+    "time_namelookup": 0.006814,
+    "time_pretransfer": 0.071249,
+    "time_redirect": 0,
+    "time_starttransfer": 0.151779,
+    "time_total": 0.157468
+  },
+  {
+    "time_appconnect": 0.076706,
+    "time_connect": 0.019711,
+    "time_namelookup": 0.004842,
+    "time_pretransfer": 0.076979,
+    "time_redirect": 0,
+    "time_starttransfer": 0.173347,
+    "time_total": 0.173869
+  },
+  {
+    "time_appconnect": 0.064935,
+    "time_connect": 0.016976,
+    "time_namelookup": 0.007533,
+    "time_pretransfer": 0.065147,
+    "time_redirect": 0,
+    "time_starttransfer": 0.150576,
+    "time_total": 0.151689
+  },
+  {
+    "time_appconnect": 0.060443,
+    "time_connect": 0.014856,
+    "time_namelookup": 0.004783,
+    "time_pretransfer": 0.06051,
+    "time_redirect": 0,
+    "time_starttransfer": 0.152532,
+    "time_total": 0.156787
+  },
+  {
+    "time_appconnect": 0.064845,
+    "time_connect": 0.015361,
+    "time_namelookup": 0.005325,
+    "time_pretransfer": 0.064926,
+    "time_redirect": 0,
+    "time_starttransfer": 0.151104,
+    "time_total": 0.156657
+  },
+  {
+    "time_appconnect": 0.278163,
+    "time_connect": 0.228569,
+    "time_namelookup": 0.008622,
+    "time_pretransfer": 0.279322,
+    "time_redirect": 0,
+    "time_starttransfer": 0.37102,
+    "time_total": 0.376618
+  },
+  {
+    "time_appconnect": 0.068479,
+    "time_connect": 0.019905,
+    "time_namelookup": 0.008601,
+    "time_pretransfer": 0.068739,
+    "time_redirect": 0,
+    "time_starttransfer": 0.154249,
+    "time_total": 0.155427
+  },
+  {
+    "time_appconnect": 0.071869,
+    "time_connect": 0.019647,
+    "time_namelookup": 0.007756,
+    "time_pretransfer": 0.071944,
+    "time_redirect": 0,
+    "time_starttransfer": 0.154377,
+    "time_total": 0.156996
+  },
+  {
+    "time_appconnect": 0.066119,
+    "time_connect": 0.017622,
+    "time_namelookup": 0.004616,
+    "time_pretransfer": 0.066198,
+    "time_redirect": 0,
+    "time_starttransfer": 0.157202,
+    "time_total": 0.162099
+  },
+  {
+    "time_appconnect": 0.07246,
+    "time_connect": 0.018498,
+    "time_namelookup": 0.00866,
+    "time_pretransfer": 0.07265,
+    "time_redirect": 0,
+    "time_starttransfer": 0.154885,
+    "time_total": 0.157517
+  },
+  {
+    "time_appconnect": 0.079395,
+    "time_connect": 0.023915,
+    "time_namelookup": 0.007895,
+    "time_pretransfer": 0.079744,
+    "time_redirect": 0,
+    "time_starttransfer": 0.165715,
+    "time_total": 0.168241
+  },
+  {
+    "time_appconnect": 0.067161,
+    "time_connect": 0.017938,
+    "time_namelookup": 0.007515,
+    "time_pretransfer": 0.067299,
+    "time_redirect": 0,
+    "time_starttransfer": 0.153256,
+    "time_total": 0.156218
+  },
+  {
+    "time_appconnect": 0.070017,
+    "time_connect": 0.018441,
+    "time_namelookup": 0.007068,
+    "time_pretransfer": 0.070215,
+    "time_redirect": 0,
+    "time_starttransfer": 0.160747,
+    "time_total": 0.162544
+  },
+  {
+    "time_appconnect": 0.067148,
+    "time_connect": 0.017894,
+    "time_namelookup": 0.005238,
+    "time_pretransfer": 0.06724,
+    "time_redirect": 0,
+    "time_starttransfer": 0.159717,
+    "time_total": 0.162448
+  },
+  {
+    "time_appconnect": 0.06884,
+    "time_connect": 0.018538,
+    "time_namelookup": 0.006144,
+    "time_pretransfer": 0.069072,
+    "time_redirect": 0,
+    "time_starttransfer": 0.180805,
+    "time_total": 0.181107
+  },
+  {
+    "time_appconnect": 0.068099,
+    "time_connect": 0.017431,
+    "time_namelookup": 0.007258,
+    "time_pretransfer": 0.068347,
+    "time_redirect": 0,
+    "time_starttransfer": 0.152011,
+    "time_total": 0.153749
+  },
+  {
+    "time_appconnect": 0.069385,
+    "time_connect": 0.019542,
+    "time_namelookup": 0.008377,
+    "time_pretransfer": 0.069624,
+    "time_redirect": 0,
+    "time_starttransfer": 0.15913,
+    "time_total": 0.161983
+  },
+  {
+    "time_appconnect": 0.071338,
+    "time_connect": 0.022927,
+    "time_namelookup": 0.007989,
+    "time_pretransfer": 0.071609,
+    "time_redirect": 0,
+    "time_starttransfer": 0.152629,
+    "time_total": 0.158774
+  },
+  {
+    "time_appconnect": 0.07438,
+    "time_connect": 0.021805,
+    "time_namelookup": 0.009461,
+    "time_pretransfer": 0.074636,
+    "time_redirect": 0,
+    "time_starttransfer": 0.167485,
+    "time_total": 0.170367
+  },
+  {
+    "time_appconnect": 0.06164,
+    "time_connect": 0.015556,
+    "time_namelookup": 0.004089,
+    "time_pretransfer": 0.061708,
+    "time_redirect": 0,
+    "time_starttransfer": 0.149747,
+    "time_total": 0.152147
+  },
+  {
+    "time_appconnect": 0.066623,
+    "time_connect": 0.014597,
+    "time_namelookup": 0.003933,
+    "time_pretransfer": 0.066773,
+    "time_redirect": 0,
+    "time_starttransfer": 0.161892,
+    "time_total": 0.163589
+  },
+  {
+    "time_appconnect": 0.073348,
+    "time_connect": 0.02225,
+    "time_namelookup": 0.00791,
+    "time_pretransfer": 0.073478,
+    "time_redirect": 0,
+    "time_starttransfer": 0.164371,
+    "time_total": 0.168493
+  },
+  {
+    "time_appconnect": 0.070223,
+    "time_connect": 0.017059,
+    "time_namelookup": 0.007345,
+    "time_pretransfer": 0.070366,
+    "time_redirect": 0,
+    "time_starttransfer": 0.160353,
+    "time_total": 0.166199
+  },
+  {
+    "time_appconnect": 0.182963,
+    "time_connect": 0.119348,
+    "time_namelookup": 0.104027,
+    "time_pretransfer": 0.183146,
+    "time_redirect": 0,
+    "time_starttransfer": 0.277045,
+    "time_total": 0.28436
+  },
+  {
+    "time_appconnect": 0.069425,
+    "time_connect": 0.020944,
+    "time_namelookup": 0.004091,
+    "time_pretransfer": 0.069482,
+    "time_redirect": 0,
+    "time_starttransfer": 0.158815,
+    "time_total": 0.162958
+  },
+  {
+    "time_appconnect": 0.067953,
+    "time_connect": 0.014915,
+    "time_namelookup": 0.003688,
+    "time_pretransfer": 0.068105,
+    "time_redirect": 0,
+    "time_starttransfer": 0.16388,
+    "time_total": 0.168372
+  },
+  {
+    "time_appconnect": 0.076538,
+    "time_connect": 0.025817,
+    "time_namelookup": 0.009183,
+    "time_pretransfer": 0.076666,
+    "time_redirect": 0,
+    "time_starttransfer": 0.161109,
+    "time_total": 0.167096
+  },
+  {
+    "time_appconnect": 0.074316,
+    "time_connect": 0.022492,
+    "time_namelookup": 0.008574,
+    "time_pretransfer": 0.074544,
+    "time_redirect": 0,
+    "time_starttransfer": 0.159077,
+    "time_total": 0.15927
+  },
+  {
+    "time_appconnect": 0.284402,
+    "time_connect": 0.236446,
+    "time_namelookup": 0.009969,
+    "time_pretransfer": 0.284472,
+    "time_redirect": 0,
+    "time_starttransfer": 0.378294,
+    "time_total": 0.381315
+  },
+  {
+    "time_appconnect": 0.069552,
+    "time_connect": 0.017258,
+    "time_namelookup": 0.003784,
+    "time_pretransfer": 0.069682,
+    "time_redirect": 0,
+    "time_starttransfer": 0.153708,
+    "time_total": 0.156706
+  },
+  {
+    "time_appconnect": 0.078781,
+    "time_connect": 0.025437,
+    "time_namelookup": 0.008096,
+    "time_pretransfer": 0.079016,
+    "time_redirect": 0,
+    "time_starttransfer": 0.169756,
+    "time_total": 0.172084
+  },
+  {
+    "time_appconnect": 0.069733,
+    "time_connect": 0.019864,
+    "time_namelookup": 0.008676,
+    "time_pretransfer": 0.069957,
+    "time_redirect": 0,
+    "time_starttransfer": 0.160099,
+    "time_total": 0.163954
+  },
+  {
+    "time_appconnect": 0.070879,
+    "time_connect": 0.020916,
+    "time_namelookup": 0.008099,
+    "time_pretransfer": 0.071009,
+    "time_redirect": 0,
+    "time_starttransfer": 0.165266,
+    "time_total": 0.169167
+  },
+  {
+    "time_appconnect": 0.063687,
+    "time_connect": 0.0182,
+    "time_namelookup": 0.008092,
+    "time_pretransfer": 0.063871,
+    "time_redirect": 0,
+    "time_starttransfer": 0.159401,
+    "time_total": 0.159497
+  },
+  {
+    "time_appconnect": 0.064315,
+    "time_connect": 0.016579,
+    "time_namelookup": 0.004455,
+    "time_pretransfer": 0.064388,
+    "time_redirect": 0,
+    "time_starttransfer": 0.153351,
+    "time_total": 0.154445
+  },
+  {
+    "time_appconnect": 0.06585,
+    "time_connect": 0.017166,
+    "time_namelookup": 0.003685,
+    "time_pretransfer": 0.06605,
+    "time_redirect": 0,
+    "time_starttransfer": 0.160576,
+    "time_total": 0.161778
+  },
+  {
+    "time_appconnect": 0.08325,
+    "time_connect": 0.027963,
+    "time_namelookup": 0.010322,
+    "time_pretransfer": 0.083391,
+    "time_redirect": 0,
+    "time_starttransfer": 0.173288,
+    "time_total": 0.180682
+  },
+  {
+    "time_appconnect": 0.07148,
+    "time_connect": 0.019643,
+    "time_namelookup": 0.007842,
+    "time_pretransfer": 0.071644,
+    "time_redirect": 0,
+    "time_starttransfer": 0.165447,
+    "time_total": 0.167218
+  },
+  {
+    "time_appconnect": 0.076703,
+    "time_connect": 0.022454,
+    "time_namelookup": 0.008663,
+    "time_pretransfer": 0.076888,
+    "time_redirect": 0,
+    "time_starttransfer": 0.180127,
+    "time_total": 0.183571
+  },
+  {
+    "time_appconnect": 0.070002,
+    "time_connect": 0.020976,
+    "time_namelookup": 0.005977,
+    "time_pretransfer": 0.07007,
+    "time_redirect": 0,
+    "time_starttransfer": 0.170429,
+    "time_total": 0.172535
+  },
+  {
+    "time_appconnect": 0.066025,
+    "time_connect": 0.017591,
+    "time_namelookup": 0.005849,
+    "time_pretransfer": 0.066122,
+    "time_redirect": 0,
+    "time_starttransfer": 0.160704,
+    "time_total": 0.164776
+  },
+  {
+    "time_appconnect": 0.068854,
+    "time_connect": 0.022222,
+    "time_namelookup": 0.008036,
+    "time_pretransfer": 0.069009,
+    "time_redirect": 0,
+    "time_starttransfer": 0.156207,
+    "time_total": 0.156991
+  },
+  {
+    "time_appconnect": 0.075067,
+    "time_connect": 0.022948,
+    "time_namelookup": 0.009875,
+    "time_pretransfer": 0.075232,
+    "time_redirect": 0,
+    "time_starttransfer": 0.161857,
+    "time_total": 0.164239
+  },
+  {
+    "time_appconnect": 0.07161,
+    "time_connect": 0.020064,
+    "time_namelookup": 0.007826,
+    "time_pretransfer": 0.071885,
+    "time_redirect": 0,
+    "time_starttransfer": 0.170013,
+    "time_total": 0.1727
+  },
+  {
+    "time_appconnect": 0.070907,
+    "time_connect": 0.024832,
+    "time_namelookup": 0.01164,
+    "time_pretransfer": 0.071111,
+    "time_redirect": 0,
+    "time_starttransfer": 0.164314,
+    "time_total": 0.164413
+  },
+  {
+    "time_appconnect": 0.066332,
+    "time_connect": 0.016458,
+    "time_namelookup": 0.003574,
+    "time_pretransfer": 0.066428,
+    "time_redirect": 0,
+    "time_starttransfer": 0.158853,
+    "time_total": 0.162206
+  },
+  {
+    "time_appconnect": 0.074544,
+    "time_connect": 0.022547,
+    "time_namelookup": 0.007341,
+    "time_pretransfer": 0.074695,
+    "time_redirect": 0,
+    "time_starttransfer": 0.162756,
+    "time_total": 0.168636
+  },
+  {
+    "time_appconnect": 0.282923,
+    "time_connect": 0.22977,
+    "time_namelookup": 0.009489,
+    "time_pretransfer": 0.283335,
+    "time_redirect": 0,
+    "time_starttransfer": 0.372917,
+    "time_total": 0.375725
+  },
+  {
+    "time_appconnect": 0.077948,
+    "time_connect": 0.02528,
+    "time_namelookup": 0.010527,
+    "time_pretransfer": 0.078103,
+    "time_redirect": 0,
+    "time_starttransfer": 0.162614,
+    "time_total": 0.164196
+  },
+  {
+    "time_appconnect": 0.066618,
+    "time_connect": 0.017898,
+    "time_namelookup": 0.00739,
+    "time_pretransfer": 0.066683,
+    "time_redirect": 0,
+    "time_starttransfer": 0.154834,
+    "time_total": 0.156499
+  },
+  {
+    "time_appconnect": 0.062911,
+    "time_connect": 0.016178,
+    "time_namelookup": 0.005532,
+    "time_pretransfer": 0.063025,
+    "time_redirect": 0,
+    "time_starttransfer": 0.16163,
+    "time_total": 0.161884
+  },
+  {
+    "time_appconnect": 0.077751,
+    "time_connect": 0.025388,
+    "time_namelookup": 0.008106,
+    "time_pretransfer": 0.07803,
+    "time_redirect": 0,
+    "time_starttransfer": 0.165803,
+    "time_total": 0.168115
+  },
+  {
+    "time_appconnect": 0.075071,
+    "time_connect": 0.021941,
+    "time_namelookup": 0.010113,
+    "time_pretransfer": 0.075328,
+    "time_redirect": 0,
+    "time_starttransfer": 0.164376,
+    "time_total": 0.164957
+  },
+  {
+    "time_appconnect": 0.072062,
+    "time_connect": 0.018855,
+    "time_namelookup": 0.009198,
+    "time_pretransfer": 0.072202,
+    "time_redirect": 0,
+    "time_starttransfer": 0.160056,
+    "time_total": 0.163955
+  },
+  {
+    "time_appconnect": 0.072384,
+    "time_connect": 0.020511,
+    "time_namelookup": 0.009398,
+    "time_pretransfer": 0.072659,
+    "time_redirect": 0,
+    "time_starttransfer": 0.163894,
+    "time_total": 0.164021
+  },
+  {
+    "time_appconnect": 0.06711,
+    "time_connect": 0.017667,
+    "time_namelookup": 0.004438,
+    "time_pretransfer": 0.067218,
+    "time_redirect": 0,
+    "time_starttransfer": 0.149833,
+    "time_total": 0.152846
+  },
+  {
+    "time_appconnect": 0.072925,
+    "time_connect": 0.022293,
+    "time_namelookup": 0.007166,
+    "time_pretransfer": 0.073044,
+    "time_redirect": 0,
+    "time_starttransfer": 0.173916,
+    "time_total": 0.174286
+  },
+  {
+    "time_appconnect": 0.069514,
+    "time_connect": 0.020404,
+    "time_namelookup": 0.009025,
+    "time_pretransfer": 0.06963,
+    "time_redirect": 0,
+    "time_starttransfer": 0.160076,
+    "time_total": 0.16427
+  },
+  {
+    "time_appconnect": 0.072986,
+    "time_connect": 0.02294,
+    "time_namelookup": 0.007697,
+    "time_pretransfer": 0.073129,
+    "time_redirect": 0,
+    "time_starttransfer": 0.165945,
+    "time_total": 0.167716
+  },
+  {
+    "time_appconnect": 0.072578,
+    "time_connect": 0.021877,
+    "time_namelookup": 0.004129,
+    "time_pretransfer": 0.072703,
+    "time_redirect": 0,
+    "time_starttransfer": 0.154944,
+    "time_total": 0.157242
+  },
+  {
+    "time_appconnect": 0.067386,
+    "time_connect": 0.020805,
+    "time_namelookup": 0.007388,
+    "time_pretransfer": 0.067459,
+    "time_redirect": 0,
+    "time_starttransfer": 0.157389,
+    "time_total": 0.16787
+  },
+  {
+    "time_appconnect": 0.084554,
+    "time_connect": 0.02354,
+    "time_namelookup": 0.006175,
+    "time_pretransfer": 0.08479,
+    "time_redirect": 0,
+    "time_starttransfer": 0.182738,
+    "time_total": 0.187096
+  },
+  {
+    "time_appconnect": 0.071219,
+    "time_connect": 0.018965,
+    "time_namelookup": 0.004177,
+    "time_pretransfer": 0.071437,
+    "time_redirect": 0,
+    "time_starttransfer": 0.153991,
+    "time_total": 0.156941
+  },
+  {
+    "time_appconnect": 0.090294,
+    "time_connect": 0.023064,
+    "time_namelookup": 0.009263,
+    "time_pretransfer": 0.090482,
+    "time_redirect": 0,
+    "time_starttransfer": 0.184825,
+    "time_total": 0.187084
+  },
+  {
+    "time_appconnect": 0.06811,
+    "time_connect": 0.01832,
+    "time_namelookup": 0.005834,
+    "time_pretransfer": 0.068422,
+    "time_redirect": 0,
+    "time_starttransfer": 0.164746,
+    "time_total": 0.16485
+  },
+  {
+    "time_appconnect": 0.064509,
+    "time_connect": 0.017033,
+    "time_namelookup": 0.005665,
+    "time_pretransfer": 0.064581,
+    "time_redirect": 0,
+    "time_starttransfer": 0.153597,
+    "time_total": 0.154819
+  },
+  {
+    "time_appconnect": 0.074912,
+    "time_connect": 0.022497,
+    "time_namelookup": 0.00689,
+    "time_pretransfer": 0.07506,
+    "time_redirect": 0,
+    "time_starttransfer": 0.160422,
+    "time_total": 0.164862
+  },
+  {
+    "time_appconnect": 0.07147,
+    "time_connect": 0.022868,
+    "time_namelookup": 0.008031,
+    "time_pretransfer": 0.071591,
+    "time_redirect": 0,
+    "time_starttransfer": 0.164508,
+    "time_total": 0.166343
+  },
+  {
+    "time_appconnect": 0.075823,
+    "time_connect": 0.021571,
+    "time_namelookup": 0.010583,
+    "time_pretransfer": 0.077366,
+    "time_redirect": 0,
+    "time_starttransfer": 0.164587,
+    "time_total": 0.165813
+  },
+  {
+    "time_appconnect": 0.078556,
+    "time_connect": 0.018436,
+    "time_namelookup": 0.00753,
+    "time_pretransfer": 0.078701,
+    "time_redirect": 0,
+    "time_starttransfer": 0.164349,
+    "time_total": 0.165049
+  },
+  {
+    "time_appconnect": 0.076743,
+    "time_connect": 0.026149,
+    "time_namelookup": 0.009658,
+    "time_pretransfer": 0.076805,
+    "time_redirect": 0,
+    "time_starttransfer": 0.168054,
+    "time_total": 0.175826
+  },
+  {
+    "time_appconnect": 0.069382,
+    "time_connect": 0.019799,
+    "time_namelookup": 0.005222,
+    "time_pretransfer": 0.069509,
+    "time_redirect": 0,
+    "time_starttransfer": 0.168455,
+    "time_total": 0.173195
+  },
+  {
+    "time_appconnect": 0.075826,
+    "time_connect": 0.022586,
+    "time_namelookup": 0.009693,
+    "time_pretransfer": 0.076083,
+    "time_redirect": 0,
+    "time_starttransfer": 0.164647,
+    "time_total": 0.166286
+  },
+  {
+    "time_appconnect": 0.074754,
+    "time_connect": 0.025002,
+    "time_namelookup": 0.008475,
+    "time_pretransfer": 0.074945,
+    "time_redirect": 0,
+    "time_starttransfer": 0.167682,
+    "time_total": 0.168867
+  },
+  {
+    "time_appconnect": 0.067678,
+    "time_connect": 0.020118,
+    "time_namelookup": 0.009677,
+    "time_pretransfer": 0.067941,
+    "time_redirect": 0,
+    "time_starttransfer": 0.163675,
+    "time_total": 0.169363
+  },
+  {
+    "time_appconnect": 0.071958,
+    "time_connect": 0.019956,
+    "time_namelookup": 0.007877,
+    "time_pretransfer": 0.072087,
+    "time_redirect": 0,
+    "time_starttransfer": 0.165232,
+    "time_total": 0.168876
+  }
+]
