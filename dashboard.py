@@ -35,8 +35,10 @@ def main():
     args = parse_arguments()
 
     st.set_page_config(
-        page_title="Curl Metrics Visualization",
+        page_title="cURL Metrics Visualization",
         initial_sidebar_state="collapsed")
+
+    st.header("cURL Metrics Visualization")
 
     default_data = load_default_json(args.default_json)
 
@@ -62,8 +64,31 @@ def main():
             "Please upload a JSON file or provide a default JSON file via --default-json.")
         return
 
-    metrics = data[0].keys()
-    metrics = [key for key in metrics if key != "time_offset"]
+    keys = data[0].keys()
+    metrics = [
+        "time_namelookup",
+        "time_connect",
+        "time_redirect",
+        "time_appconnect",
+        "time_pretransfer",
+        "time_starttransfer",
+        "time_total",
+    ]
+    if not set(metrics).issubset(set(keys)):
+        st.error(
+            f'There are no {metrics} fields in the input data. {list(keys)}')
+        return False
+    if "time_posttransfer" in keys:
+        metrics = [
+            "time_namelookup",
+            "time_connect",
+            "time_redirect",
+            "time_appconnect",
+            "time_pretransfer",
+            "time_starttransfer",
+            "time_posttransfer",  # added
+            "time_total",
+        ]
     stats = {}
 
     for metric in metrics:
@@ -93,7 +118,7 @@ def main():
             "Variance"]).T
     st.dataframe(stats_df, use_container_width=True)
 
-    st.header("Bar Chart: Mean, Min, Max")
+    st.header("Mean, Min, Max")
 
     labels = list(stats.keys())
     means = [stat["mean"] for stat in stats.values()]
@@ -125,7 +150,7 @@ def main():
     )
     st.plotly_chart(fig)
 
-    st.header("Line Chart: Per Request Values")
+    st.header("Requests")
 
     fig2 = go.Figure()
 
@@ -150,17 +175,29 @@ def main():
 
     def calculate_timeline_with_offset(data):
         timeline = []
+        # NOTE: for debug
         # start_offset = min([entry['time_offset'] for entry in data])
         start_offset = 0
         for entry in data:
+            # NOTE: If there is no redirect, the value is 0.
+            if entry["time_redirect"] == 0:
+                entry["time_redirect"] = entry["time_connect"]
+
             stages = {
-                "DNS Lookup": entry["time_namelookup"],
-                "Connection": entry["time_connect"] - entry["time_namelookup"],
-                "SSL Handshake": entry["time_appconnect"] - entry["time_connect"],
-                "Request Preparation": entry["time_pretransfer"] - entry["time_appconnect"],
-                "Time to First Byte": entry["time_starttransfer"] - entry["time_pretransfer"],
-                "Total": entry["time_total"] - entry["time_starttransfer"],
+                "DNS Lookup(time_namelookup)": entry["time_namelookup"],
+                "Connection(time_connect)": entry["time_connect"] - entry["time_namelookup"],
+                "Redirected(time_redirect)": entry["time_redirect"] - entry["time_connect"],
+                "SSL Handshake(time_appconnect)": entry["time_appconnect"] - entry["time_redirect"],
+                "Request Preparation(time_pretransfer)": entry["time_pretransfer"] - entry["time_appconnect"],
+                "Time to First Byte Received(time_starttransfer)": entry["time_starttransfer"] - entry["time_pretransfer"],
+                "End(time_total)": entry["time_total"] - entry["time_starttransfer"],
             }
+            if "time_posttransfer" in entry:
+                del stages["End(time_total)"]
+                stages["Time to Last Byte Sent(time_posttransfer)"] = \
+                    entry["time_posttransfer"] - entry["time_starttransfer"]
+                stages["End(time_total)"] = \
+                    entry["time_total"] - entry["time_posttransfer"]
 
             start_time = entry["time_offset"] - start_offset
             adjusted_timeline = []
@@ -193,9 +230,15 @@ def main():
         return fig
 
     if "time_offset" in data[0].keys():
+        st.header("Timeline")
         timeline = calculate_timeline_with_offset(data)
         fig = plot_timeline_with_offset(timeline)
         st.plotly_chart(fig)
+
+    st.markdown('''
+    ## link
+    [curl - time_ prefix fields document]( https://curl.se/docs/manpage.html#timeappconnect )
+    ''')
 
 
 if __name__ == "__main__":

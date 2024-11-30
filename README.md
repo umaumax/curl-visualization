@@ -33,6 +33,12 @@ wait
 cat curl.*.json | jq 'with_entries(select(.key|test("^time.*")))' | jq -s . > curl.time-results.json
 ```
 
+### NOTE
+You can get a `time_redirect` field by a below command.
+``` bash
+curl -L -s -o /dev/null -w '%{json}' https://google.com | jq 'with_entries(select(.key|test("^time.*")))'
+```
+
 ## how to run
 launch streamlit server by default json data
 ``` bash
