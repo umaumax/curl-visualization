@@ -225,7 +225,12 @@ def main():
             x_end="end",
             y="group",
             color="stage",
-            title="Task Timeline")
+            hover_data={
+                # NOTE: This filed is also shown as a hover text.
+                "duration": True,
+            },
+            title="Task Timeline"
+        )
 
         return fig
 
