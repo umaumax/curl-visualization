@@ -2,11 +2,11 @@
 import argparse
 import json
 import statistics
-import matplotlib.pyplot as plt
 import streamlit as st
 import numpy as np
 import pandas as pd
 import os
+import plotly.graph_objects as go
 
 
 def parse_arguments():
@@ -97,34 +97,36 @@ def main():
     mins = [stat["min"] for stat in stats.values()]
     maxs = [stat["max"] for stat in stats.values()]
 
-    x = np.arange(len(labels))
-    width = 0.2
+    fig = go.Figure()
 
-    fig, ax = plt.subplots(figsize=(10, 6))
-    ax.bar(x - width, means, width, label='Mean', color='skyblue')
-    ax.bar(x, mins, width, label='Min', color='lightgreen')
-    ax.bar(x + width, maxs, width, label='Max', color='salmon')
-    ax.set_xlabel('Metrics')
-    ax.set_ylabel('Time (s)')
-    ax.set_title('Metrics Summary')
-    ax.set_xticks(x)
-    ax.set_xticklabels(labels, rotation=45)
-    ax.legend()
-    st.pyplot(fig)
+    fig.add_trace(go.Bar(x=labels, y=means, name='Mean', marker_color='skyblue'))
+    fig.add_trace(go.Bar(x=labels, y=mins, name='Min', marker_color='lightgreen'))
+    fig.add_trace(go.Bar(x=labels, y=maxs, name='Max', marker_color='salmon'))
+
+    fig.update_layout(
+        title="Metrics Summary",
+        xaxis_title="Metrics",
+        yaxis_title="Time (s)",
+        barmode='group',
+        xaxis_tickangle=-45
+    )
+    st.plotly_chart(fig)
 
     st.header("Line Chart: Per Request Values")
 
-    fig2, ax2 = plt.subplots(figsize=(10, 6))
-    for i, metric in enumerate(labels):
-        values = stats[metric]["values"]
-        ax2.plot(range(len(values)), values, marker='o', label=metric)
+    fig2 = go.Figure()
 
-    ax2.set_xlabel('Request Index')
-    ax2.set_ylabel('Time (s)')
-    ax2.set_title('Metrics per Request')
-    ax2.legend()
-    ax2.grid()
-    st.pyplot(fig2)
+    for metric in labels:
+        values = stats[metric]["values"]
+        fig2.add_trace(go.Scatter(x=list(range(len(values))), y=values, mode='lines+markers', name=metric))
+
+    fig2.update_layout(
+        title="Metrics per Request",
+        xaxis_title="Request Index",
+        yaxis_title="Time (s)",
+        legend_title="Metrics"
+    )
+    st.plotly_chart(fig2)
 
     def calculate_timeline_with_offset(data):
         timeline = []
@@ -148,8 +150,6 @@ def main():
         return timeline
 
     def plot_timeline_with_offset(timeline):
-        num_requests = len(timeline)
-        stages = [stage[0] for stage in timeline[0]]
         colors = [
             "#FF9999",
             "#66B2FF",
@@ -157,36 +157,37 @@ def main():
             "#FFD700",
             "#FFB266",
             "#66FFFF"]
-
-        fig, ax = plt.subplots(figsize=(12, 6))
-        bar_height = 0.4
+        
+        fig = go.Figure()
 
         for i, request in enumerate(timeline):
-            for j, (stage, start_time, duration) in enumerate(request):
-                ax.barh(
-                    i,
-                    duration,
-                    left=start_time,
-                    height=bar_height,
-                    color=colors[j],
-                    label=stage if i == 0 else "")
+            start_time = 0
+            for j, (stage, start, duration) in enumerate(request):
+                fig.add_trace(go.Bar(
+                    x=[stage],
+                    y=[duration],
+                    base=start_time,
+                    name=stage,
+                    marker_color=colors[j],
+                    hoverinfo="x+y"
+                ))
+                start_time += duration
 
-        ax.set_xlabel("Time (s)")
-        ax.set_ylabel("Request Index")
-        ax.set_title("Curl Metrics Timeline with Time Offset")
-        y_step = 10
-        ax.set_yticks(range(0, num_requests, y_step))
-        ax.set_yticklabels(
-            [f"[{i}]" for i in range(0, num_requests, y_step)])
-        ax.legend(loc="lower right")
-        ax.grid(axis="x", linestyle="--", alpha=0.7)
+        fig.update_layout(
+            title="Curl Metrics Timeline with Time Offset",
+            xaxis_title="Time (s)",
+            yaxis_title="Request Index",
+            barmode="stack",
+            xaxis=dict(tickmode="linear"),
+            showlegend=True
+        )
 
         return fig
 
     if "time_offset" in data[0].keys():
         timeline = calculate_timeline_with_offset(data)
         fig = plot_timeline_with_offset(timeline)
-        st.pyplot(fig)
+        st.plotly_chart(fig)
 
 
 if __name__ == "__main__":
