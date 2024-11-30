@@ -45,3 +45,14 @@ launch streamlit server by default json data
 streamlit run ./dashboard.py -- --default-json ./samples/sequential/curl.time-results.json
 streamlit run ./dashboard.py -- --default-json ./samples/parallel/curl.time-results.json
 ```
+
+## screenshots
+### sequential
+![1-1-sequential-summary](https://github.com/user-attachments/assets/95366624-39ef-4d37-8feb-dbd2fdd4076d)
+![1-2-sequential-requests](https://github.com/user-attachments/assets/37191152-e95d-47b7-847c-358ad9ace1d3)
+![1-3-sequential-timeline](https://github.com/user-attachments/assets/d086bc33-bb53-4747-b11b-f18df6778b28)
+
+### parallel
+![2-1-parallel-summary](https://github.com/user-attachments/assets/b18f8790-6849-4590-a79e-562525edb24a)
+![2-2-parallel-requests](https://github.com/user-attachments/assets/24a8e0c5-d342-4102-9d87-09e1ff9d5df5)
+![2-3-parallel-timeline](https://github.com/user-attachments/assets/507efe1c-cfb1-4457-bd2d-8314dd00a1a6)
