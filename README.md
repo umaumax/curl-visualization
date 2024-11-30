@@ -45,3 +45,19 @@ launch streamlit server by default json data
 streamlit run ./dashboard.py -- --default-json ./samples/sequential/curl.time-results.json
 streamlit run ./dashboard.py -- --default-json ./samples/parallel/curl.time-results.json
 ```
+
+``` marmaid
+gantt
+    title cURL time_ prefix fields Timeline
+    dateFormat  X
+    axisFormat  
+    section Metrics
+    time_namelookup       :active, a1, 0, 1
+    time_connect          :active, a2, 0, 2
+    time_redirect         :active, a3, 0, 3
+    time_appconnect       :active, a4, 0, 4
+    time_pretransfer      :active, a5, 0, 5
+    time_starttransfer    :active, a6, 0, 6
+    time_posttransfer     :active, a7, 0, 7
+    time_total            :active, a8, 0, 8
+```
