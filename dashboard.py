@@ -2,11 +2,14 @@
 import argparse
 import json
 import statistics
-import streamlit as st
-import numpy as np
-import pandas as pd
 import os
+
+import pandas as pd
+
+import streamlit as st
+
 import plotly.graph_objects as go
+import plotly.express as px
 
 
 def parse_arguments():
@@ -99,8 +102,18 @@ def main():
 
     fig = go.Figure()
 
-    fig.add_trace(go.Bar(x=labels, y=means, name='Mean', marker_color='skyblue'))
-    fig.add_trace(go.Bar(x=labels, y=mins, name='Min', marker_color='lightgreen'))
+    fig.add_trace(
+        go.Bar(
+            x=labels,
+            y=means,
+            name='Mean',
+            marker_color='skyblue'))
+    fig.add_trace(
+        go.Bar(
+            x=labels,
+            y=mins,
+            name='Min',
+            marker_color='lightgreen'))
     fig.add_trace(go.Bar(x=labels, y=maxs, name='Max', marker_color='salmon'))
 
     fig.update_layout(
@@ -118,7 +131,14 @@ def main():
 
     for metric in labels:
         values = stats[metric]["values"]
-        fig2.add_trace(go.Scatter(x=list(range(len(values))), y=values, mode='lines+markers', name=metric))
+        fig2.add_trace(
+            go.Scatter(
+                x=list(
+                    range(
+                        len(values))),
+                y=values,
+                mode='lines+markers',
+                name=metric))
 
     fig2.update_layout(
         title="Metrics per Request",
@@ -130,7 +150,8 @@ def main():
 
     def calculate_timeline_with_offset(data):
         timeline = []
-        start_offset = min([entry['time_offset'] for entry in data])
+        # start_offset = min([entry['time_offset'] for entry in data])
+        start_offset = 0
         for entry in data:
             stages = {
                 "DNS Lookup": entry["time_namelookup"],
@@ -150,37 +171,24 @@ def main():
         return timeline
 
     def plot_timeline_with_offset(timeline):
-        colors = [
-            "#FF9999",
-            "#66B2FF",
-            "#99FF99",
-            "#FFD700",
-            "#FFB266",
-            "#66FFFF"]
-        
-        fig = go.Figure()
-
-        for i, request in enumerate(timeline):
-            start_time = 0
-            for j, (stage, start, duration) in enumerate(request):
-                fig.add_trace(go.Bar(
-                    x=[stage],
-                    y=[duration],
-                    base=start_time,
-                    name=stage,
-                    marker_color=colors[j],
-                    hoverinfo="x+y"
-                ))
-                start_time += duration
-
-        fig.update_layout(
-            title="Curl Metrics Timeline with Time Offset",
-            xaxis_title="Time (s)",
-            yaxis_title="Request Index",
-            barmode="stack",
-            xaxis=dict(tickmode="linear"),
-            showlegend=True
-        )
+        df_list = []
+        for idx, sublist in enumerate(timeline):
+            df = pd.DataFrame(sublist, columns=['stage', 'start', 'duration'])
+            df['group'] = idx
+            df_list.append(df)
+        df = pd.concat(df_list, ignore_index=True)
+        df['end'] = df['start'] + df['duration']
+        df['start'] = pd.to_datetime(
+            df['start'], unit='s', utc=True) .dt.tz_convert('Asia/Tokyo')
+        df['end'] = pd.to_datetime(
+            df['end'], unit='s', utc=True).dt.tz_convert('Asia/Tokyo')
+        fig = px.timeline(
+            df,
+            x_start="start",
+            x_end="end",
+            y="group",
+            color="stage",
+            title="Task Timeline")
 
         return fig
 
