@@ -10,6 +10,9 @@ import streamlit as st
 
 import plotly.graph_objects as go
 import plotly.express as px
+import plotly.io as pio
+
+pio.templates.default = "plotly"
 
 
 def parse_arguments():
@@ -19,6 +22,12 @@ def parse_arguments():
         "--default-json",
         type=str,
         help="Path to the default JSON file to load",
+        default=None,
+    )
+    parser.add_argument(
+        "--title",
+        type=str,
+        help="Title for the data",
         default=None,
     )
     return parser.parse_args()
@@ -38,7 +47,25 @@ def main():
         page_title="cURL Metrics Visualization",
         initial_sidebar_state="collapsed")
 
-    st.header("cURL Metrics Visualization")
+    st.title("cURL Metrics Visualization")
+
+    st.header('Data')
+
+    title = st.text_input(
+        'title',
+        '',
+        placeholder=args.title)
+    if not title and args.title:
+        title = args.title
+    file_name_prefix = title + '-' if title else ''
+
+    def create_download_button(label, data, file_name):
+        st.download_button(
+            label,
+            data,
+            file_name=f'{file_name_prefix}{file_name}',
+            key=file_name,
+        )
 
     default_data = load_default_json(args.default_json)
 
@@ -98,32 +125,17 @@ def main():
             "min": min(values),
             "max": max(values),
             "variance": statistics.variance(values) if len(values) > 1 else 0,
+            "stdev": statistics.stdev(values) if len(values) > 1 else 0,
             "values": values,
         }
 
-    st.header("Statistics Table")
-    stats_table = {
-        metric: [
-            stat["mean"],
-            stat["min"],
-            stat["max"],
-            stat["variance"]] for metric,
-        stat in stats.items()}
-    stats_df = pd.DataFrame(
-        stats_table,
-        index=[
-            "Mean",
-            "Min",
-            "Max",
-            "Variance"]).T
-    st.dataframe(stats_df, use_container_width=True)
-
-    st.header("Mean, Min, Max")
-
+    st.header(f"Mean, Min, Max{ ' : '+title if title else ''}")
     labels = list(stats.keys())
     means = [stat["mean"] for stat in stats.values()]
     mins = [stat["min"] for stat in stats.values()]
     maxs = [stat["max"] for stat in stats.values()]
+    variances = [stat["variance"] for stat in stats.values()]
+    stdevs = [stat["stdev"] for stat in stats.values()]
 
     fig = go.Figure()
 
@@ -140,23 +152,62 @@ def main():
             name='Min',
             marker_color='lightgreen'))
     fig.add_trace(go.Bar(x=labels, y=maxs, name='Max', marker_color='salmon'))
+    # NOTE: Different numerical order of comparison
+    # fig.add_trace(
+    # go.Bar(
+    # x=labels,
+    # y=variances,
+    # name='Variance',
+    # marker_color='purple'))
+    fig.add_trace(
+        go.Bar(
+            x=labels,
+            y=stdevs,
+            name='Standard Deviation',
+            marker_color='orange'))
 
     fig.update_layout(
         title="Metrics Summary",
         xaxis_title="Metrics",
         yaxis_title="Time (s)",
         barmode='group',
-        xaxis_tickangle=-45
     )
     st.plotly_chart(fig)
+    create_download_button(
+        "Download",
+        pio.to_html(fig),
+        file_name='curl-metrics-summary.html'
+    )
 
-    st.header("Requests")
+    with st.expander("details..."):
+        st.header(f"Statistics Table{ ' : '+title if title else ''}")
+        stats_table = {
+            metric: [
+                stat["mean"],
+                stat["min"],
+                stat["max"],
+                stat["variance"]] for metric,
+            stat in stats.items()}
+        stats_df = pd.DataFrame(
+            stats_table,
+            index=[
+                "Mean",
+                "Min",
+                "Max",
+                "Variance"]).T
+        st.dataframe(stats_df, use_container_width=True)
+        create_download_button(
+            "Download",
+            stats_df.transpose().to_json(indent=4),
+            file_name='curl-statistics.json'
+        )
 
-    fig2 = go.Figure()
+    st.header(f"Requests Times{ ' : '+title if title else ''}")
 
+    fig = go.Figure()
     for metric in labels:
         values = stats[metric]["values"]
-        fig2.add_trace(
+        fig.add_trace(
             go.Scatter(
                 x=list(
                     range(
@@ -165,13 +216,19 @@ def main():
                 mode='lines+markers',
                 name=metric))
 
-    fig2.update_layout(
+    fig.update_layout(
         title="Metrics per Request",
         xaxis_title="Request Index",
         yaxis_title="Time (s)",
         legend_title="Metrics"
     )
-    st.plotly_chart(fig2)
+    fig.update_layout(coloraxis=dict(cmax=6, cmin=3))
+    st.plotly_chart(fig)
+    create_download_button(
+        "Download",
+        pio.to_html(fig),
+        file_name='curl-metrics-per-request.html'
+    )
 
     def calculate_timeline_with_offset(data):
         timeline = []
@@ -235,10 +292,15 @@ def main():
         return fig
 
     if "time_offset" in data[0].keys():
-        st.header("Timeline")
+        st.header(f"Timeline{ ' : '+title if title else ''}")
         timeline = calculate_timeline_with_offset(data)
         fig = plot_timeline_with_offset(timeline)
         st.plotly_chart(fig)
+        create_download_button(
+            "Download",
+            pio.to_html(fig),
+            file_name='curl-timeline.html'
+        )
 
     st.markdown('''
     ## link
